@@ -1,0 +1,12 @@
+export const CHANNEL_NAME = '[channel name]'; // the channel the bot goes
+export const OAUTH_TOKEN = '[oauthkey]'; // key of your bot
+export const BOT_USERNAME = '[bot username]'; // name of bot
+export const FILES_USERNAMES = 'usersDB.txt'; // database to  store usersnames
+export const FILES_CURRENCY = 'currencyDB.txt'; // database to store currency
+export const FILES_ERROR = 'error.txt';
+export const FILES_DUEL = 'duel.txt';
+export const FILES_WIN_USERS = 'winUsers.txt';
+export const FILES_LOSE_USERS = 'loseUsers.txt';
+export const FILES_WIN_GOLD = 'winGold.txt'
+export const FILES_LOSE_GOLD = 'loseGold.txt';
+export const GET_CURRENT_VIEWER_URL = 'https://tmi.twitch.tv/group/user/[channel name]/chatters';
