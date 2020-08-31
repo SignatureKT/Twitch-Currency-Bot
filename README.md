@@ -1,1 +1,1 @@
-#Twitch-Currency-Bot
+# Twitch-Currency-Bot
