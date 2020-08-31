@@ -1,0 +1,38 @@
+Completed List:
+	-Data Structure (Hashtable)
+		-user contructor
+		-init hashtable
+		-insert user into hashtable
+		-hash function
+		-user array
+		-hashtable search name
+		-hash delete (testing purposes)
+		-print hashtable (testing purposes)
+	-User input in chat
+		-if user is not in the data structure, create a new user
+		-if user enter currency command, look up user. If the user is found display user's current currency.
+		-gamble
+			-randomized bool
+			-add or remove currency
+			-check if user has enough currency
+		-bet
+			-add two switches to check for bet and gamble
+			-set timeout function that execute function after a specified timeout
+			-allow users to participate in betting
+			-give coins to all users that won
+		-duel
+		-leaderboard
+			-hashmap into an array and map array sorting by largest to smallest int
+	-setInterval function to be executed at specified times
+		-retrieves current users from the channel using tmi twitch api
+		-if not in the hashtable, adds the user into the hashtable
+		-give currency to all current users
+	-Remove bots from currency system
+	-On Exit
+		-retrives users and writes them into csv file
+	-On Startup
+		-connect to the channel
+		-reads and parse CSV file into hashtable
+To Do:
+	-User input in chat
+		-display commands

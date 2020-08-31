@@ -1,9 +1,0 @@
-export const COMMAND_CURRENCY = '!fruits'; //command to display currency
-export const DISPLAY_HELLO = '!hello'; //command used to say hello back NOTE: mostly used for testing purposes
-export const DISPLAY_DICE = '!dice'; //command used to roll a six-sided dice
-export const COMMAND_GAMBLE = '!gamble'; //command used to bet currency that rewards the player 2x or nothing
-export const COMMAND_DUEL = '!duel'; //NOTE: This command has yet to be implemented. command used to duel between users
-export const COM = '!com'; // command used to display all commands available
-export const COMMAND_TOP = '!top'; // command used to display to 5 leaderboard
-export const COMMAND_ACCEPT = '!accept'; // command used to accept a duel
-export const COMMAND_BET = '!bet'; // command to activate and place bets

@@ -15,5 +15,7 @@ docs
 cassettes
 main/**/*.js
 main/**/*.js.map
-
+.vs
+.editorconfig
+.gitignore
 *.log
