@@ -9,7 +9,7 @@ import { GET_CURRENT_VIEWER_URL } from './constants/bot';
 import { userInfo } from 'os';
 import { writer } from 'repl';
 
-const config = ini.parse(fs.readFileSync('./config.ini', 'utf-8'));
+const config = ini.parse(fs.readFileSync('./src/config.ini', 'utf-8'));
 
 export let switches = {
 	bet: config.bet.bet,
@@ -37,7 +37,7 @@ export function write_to_csv() {
 	csvWriter.writeRecords(userArray).then(() => console.log('The CSV file was written successfully'));
 	config.bet.bet = switches.bet;
 	config.bet.inGame = switches.inGame;
-	fs.writeFileSync('./config.ini', ini.stringify(config, { whitespace: '' }));
+	fs.writeFileSync('./src/config.ini', ini.stringify(config, { whitespace: '' }));
 }
 
 // Function called when the "dice" command is issued
