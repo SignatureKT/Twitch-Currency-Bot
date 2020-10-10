@@ -1,0 +1,20 @@
+{
+  "name": "twitch-currency-bot",
+  "version": "1.0.0",
+  "description": "A Twitch Currency Bot",
+  "main": "src/",
+  "scripts": {
+    "start":"node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SignatureKT/Twitch-Currency-Bot.git"
+  },
+  "author": "SignatureKT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SignatureKT/Twitch-Currency-Bot/issues"
+  },
+  "homepage": "https://github.com/SignatureKT/Twitch-Currency-Bot#readme"
+}
