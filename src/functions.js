@@ -4,7 +4,8 @@ const request = require('request');
 const fs = require('fs');
 const ini = require('ini');
 const BOT = [ 'moobot', 'nightbot', 'streamelements', 'poppy_jalopy_bot' ];
-import { CURRENCY_INCREMENT, CURRENCY_NAME, USER_DATABASE, GET_CURRENT_VIEWER_URL, AT_SYMBOL, DUEL_COOLDOWN_TIMER } from './constants/variable';
+import { CURRENCY_INCREMENT, CURRENCY_NAME, USER_DATABASE, AT_SYMBOL, DUEL_COOLDOWN_TIMER } from './constants/variable';
+import { GET_CURRENT_VIEWER_URL } from './constants/bot';
 import { userInfo } from 'os';
 import { writer } from 'repl';
 
