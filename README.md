@@ -1,5 +1,5 @@
 # Twitch-Currency-Bot
-Twitch-Currency-Bot is a currency bot to suit your gambing needs. 
+Twitch-Currency-Bot is a currency bot to suit your gambling needs. 
 
 ## Using Twitch-Currency-Bot
 ### Prerequisites
