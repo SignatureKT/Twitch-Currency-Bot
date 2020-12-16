@@ -77,7 +77,7 @@ function onMessageHandler (target, context, msg, self) {
 	}
 
 	if(commandInput[0] === COMMAND_CURRENCY && commandInput[1] === EXTENSION_SHARE && functions.is_int(commandInput[3])) {
-		let sharedTmp = hashtable.hash_table_lookup(`${commandInput[2]}`);
+		let sharedTmp = hashtable.hash_table_lookup(`${commandInput[2].toLowerCase()}`);
 		let sharingTmp = hashtable.hash_table_lookup(`${username}`);
 		if(!sharedTmp) client.say(target, `${commandInput[2]} does not exist`);
 		else if (parseInt(sharingTmp.currency, 10) < parseInt(commandInput[3], 10)) client.say(target,`You do not have enough ${CURRENCY_NAME}`);
@@ -93,23 +93,25 @@ function onMessageHandler (target, context, msg, self) {
 	// A randomizer is used to determine whether the user win or loses currency
 	if(commandInput[0] === COMMAND_GAMBLE) {
 		let tmp = hashtable.hash_table_lookup(`${username}`);
-		if(functions.is_int(commandInput[1]) && parseInt(tmp.currency, 10) >= parseInt(commandInput[1], 10)) {
-			if(functions.random_zero_or_one()) {
-				functions.add_currency(tmp, commandInput[1]);
-				client.say(target,`${tmp.name} has won ${commandInput[1]}!`);
-			} else {
-				functions.remove_currency(tmp, commandInput[1]);
-				client.say(target, `${tmp.name} lost ${commandInput[1]} ${CURRENCY_NAME}`);
-			}
-		} else if(commandInput[1] === 'all' && parseInt(tmp.currency, 10) != 0) {
-			if(functions.random_zero_or_one()) {
-				client.say(target,`${tmp.name} has won ${tmp.currency/2}`);
-				functions.add_currency(tmp, tmp.currency);
-			} else {
-				functions.remove_currency(tmp, tmp.currency);
-				client.say(target, `${tmp.name}, you have lost all your ${CURRENCY_NAME}`);
-			}
-		} else client.say(target, `usage: '${COMMAND_GAMBLE} [amount]', and enough ${CURRENCY_NAME}`);
+		if(functions.is_int(commandInput[1])) {
+			if(parseInt(tmp.currency, 10) >= parseInt(commandInput[1], 10)) {
+				if(functions.random_zero_or_one()) {
+					functions.add_currency(tmp, commandInput[1]);
+					client.say(target,`${tmp.name} has won ${commandInput[1]}!`);
+				} else {
+					functions.remove_currency(tmp, commandInput[1]);
+					client.say(target, `${tmp.name} lost ${commandInput[1]} ${CURRENCY_NAME}`);
+				}
+			} else if(commandInput[1] === 'all' && parseInt(tmp.currency, 10) != 0) {
+				if(functions.random_zero_or_one()) {
+					client.say(target,`${tmp.name} has won ${tmp.currency/2}`);
+					functions.add_currency(tmp, tmp.currency);
+				} else {
+					functions.remove_currency(tmp, tmp.currency);
+					client.say(target, `${tmp.name}, you have lost all your ${CURRENCY_NAME}`);
+				}
+			} else client.say(target, `You do not have enough ${CURRENCY_NAME}!`)
+		} else client.say(target, `usage: '${COMMAND_GAMBLE} [amount]'`);
 		functions.write_to_csv();
 	}
 
@@ -182,7 +184,7 @@ function onMessageHandler (target, context, msg, self) {
 	// COMMAND: !duel [user] [amount]
 	// command to duel a user
 	if(commandInput[0] === COMMAND_DUEL && functions.is_int(commandInput[2]) && functions.switches.duel === 'off') {
-		let challengedTmp = hashtable.hash_table_lookup(`${commandInput[1]}`);
+		let challengedTmp = hashtable.hash_table_lookup(`${commandInput[1].toLowerCase()}`);
 		let challengerTmp = hashtable.hash_table_lookup(`${username}`);
 		if(!challengedTmp) client.say(target, `${commandInput[1]} does not exist`);
 		else if (parseInt(challengedTmp.currency, 10) < parseInt(commandInput[2], 10)) client.say(target,`${challengedTmp.name} does not have enough ${CURRENCY_NAME}`);
@@ -200,6 +202,7 @@ function onMessageHandler (target, context, msg, self) {
 		functions.switches.accept = true;
 	}
 
+	/*
 	if(commandInput[0] === '!test') {
 		let tmp = hashtable.hash_table_lookup(`${username}`);
 		console.log(`user bet: ${tmp.bet} user stake: ${tmp.stake}`);
@@ -211,6 +214,7 @@ function onMessageHandler (target, context, msg, self) {
 	if(commandInput[0] === '!printusers') {
 		hashtable.print_array()
 	}
+	*/
 }
 
 // Called every time the bot connects to Twitch chat

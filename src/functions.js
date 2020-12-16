@@ -213,12 +213,12 @@ export function duel(challenger, challenged, stake, client, target) {
 			if(stake >= 5000) {
 				add_currency(challenger, stake);
 				remove_currency(challenged, stake);
-				client.say(target, `@${challenger.name} has easily slain ${challenged.name} for a whopping ${stake} ${CURRENCY_NAME}!`);
+				client.say(target, `@${challenger.name} has slain ${challenged.name} for a whopping ${stake} ${CURRENCY_NAME}!`);
 			}
 			else {
 				add_currency(challenger, stake);
 				remove_currency(challenged, stake);
-				client.say(target, `@${challenger.name} has easily killed ${challenged.name} in cold blood for a mere amount of ${stake} ${CURRENCY_NAME}.`);
+				client.say(target, `@${challenger.name} has easily slain ${challenged.name} in cold blood for a mere amount of ${stake} ${CURRENCY_NAME}.`);
 			}
 		} else {
 			add_currency(challenged, stake);
